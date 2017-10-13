@@ -18,17 +18,19 @@ def check_prime(number):
         return len(get_all_factors(number)) == 2
 
 def main():
-    input = 600851475143
-    all_factors = get_all_factors(input)
-    # print(all_factors)
+    numInputs = int(raw_input().strip())
+    for idx in xrange(numInputs):
+        input = int(raw_input().strip())
+        all_factors = get_all_factors(input)
+        # print(all_factors)
+        
+        answer = 0
 
-    answer = 0
+        for factor in all_factors:
+            if (check_prime(factor) and (factor > answer)):
+                answer = factor
 
-    for factor in all_factors:
-        if (check_prime(factor) and (factor > answer)):
-            answer = factor
-
-    print(answer)
+        print(answer)
 
 if __name__ == '__main__':
     main()
