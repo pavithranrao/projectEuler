@@ -5,7 +5,7 @@ object MergeSort {
     println(s"Before Sort : ${list.mkString(", ")}")
 
     //    val head :: tail = list
-    
+
     val answer = mergeSort(list)
     println(s"After Sort : ${answer.mkString(", ")}")
   }
@@ -23,7 +23,8 @@ object MergeSort {
         else {
           rightHead :: merge(left, rightTail)
         }
-
+      //      case _ if left.isEmpty => right
+      //      case _ if right.isEmpty => left
       //      case _ if left.head < right.head =>
       //        left.head :: merge(left.tail, right)
       //
